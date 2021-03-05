@@ -1,0 +1,12 @@
+service x11vncservice
+{
+       port            = 5900
+       type            = UNLISTED
+       socket_type     = stream
+       protocol        = tcp
+       wait            = no
+       user            = root 
+       server          = /usr/bin/x11vnc
+       server_args     = -inetd -o /var/log/x11vnc.log -display :0 -auth /home/jptagaio/.Xauthority -rfbauth /home/jptagaio/.vnc/passwd
+       disable         = no
+}
