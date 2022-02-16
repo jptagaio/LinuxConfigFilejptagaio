@@ -10,6 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/ycm-core/YouCompleteMe.git'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -55,6 +56,9 @@ syntax on
 
 " Automatically wrap text that extends beyond the screen length
 set wrap
+
+" Set dracula as default theme
+colorscheme dracula
 
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
