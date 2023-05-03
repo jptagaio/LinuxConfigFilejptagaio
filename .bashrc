@@ -19,6 +19,7 @@ fi
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -alF'
 alias up='/home/jptagaio/git/Bash_Scripts/src/updater_script.sh'
+alias upfw='/home/jptagaio/git/Bash_Scripts/src/update_firmware.sh'
 alias df='df -h'
 alias cloud='meocloud status'
 alias v='vim'
@@ -26,7 +27,6 @@ alias cleanup='/home/jptagaio/git/Bash_Scripts/src/System_Maintenance.sh'
 alias tmx='tmux new-session -t jptagaio'
 alias mount_share='sudo /home/jptagaio/git/Bash_Scripts/src/mount_nfs.sh'
 alias umount_share='sudo /home/jptagaio/git/Bash_Scripts/src/umount_nfs.sh'
-#PS1='[\u@\h \W]\$ '
 
 # Set default text editor
 export EDITOR='vim'
