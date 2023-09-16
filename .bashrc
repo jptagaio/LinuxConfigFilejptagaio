@@ -31,7 +31,7 @@ alias umount_share='sudo /home/jptagaio/git/Bash_Scripts/src/umount_nfs.sh'
 # Set default text editor
 export EDITOR='vim'
 export VISUAL='vim'
-export PATH="${PATH}:$HOME/.local:$HOME/ti/ccs1220/Code Composer Studio 12.2.0.desktop/"
+export PATH="${PATH}:$HOME/.local:$HOME/ti/ccs1220/Code Composer Studio 12.2.0.desktop/:$HOME/.local/bin/"
 #. "$HOME/.cargo/env"
 
 # BASH HISTORY
