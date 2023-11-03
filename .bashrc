@@ -27,6 +27,8 @@ alias cleanup='/home/jptagaio/git/Bash_Scripts/src/System_Maintenance.sh'
 alias tmx='tmux new-session -t jptagaio'
 alias mount_share='sudo /home/jptagaio/git/Bash_Scripts/src/mount_nfs.sh'
 alias umount_share='sudo /home/jptagaio/git/Bash_Scripts/src/umount_nfs.sh'
+alias vnc_thinkpad='/home/jptagaio/git/Bash_Scripts/src/vnc_ArchThinkPad.sh'
+alias vnc_archdesktop='/home/jptagaio/git/Bash_Scripts/src/vnc_ArchDesktop.sh'
 
 # Set default text editor
 export EDITOR='vim'
