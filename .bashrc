@@ -28,12 +28,14 @@ alias tmx='tmux new-session -t jptagaio'
 alias mount_share='sudo /home/jptagaio/git/Bash_Scripts/src/mount_nfs.sh'
 alias umount_share='sudo /home/jptagaio/git/Bash_Scripts/src/umount_nfs.sh'
 alias vnc_thinkpad='/home/jptagaio/git/Bash_Scripts/src/vnc_ArchThinkPad.sh'
-alias vnc_archdesktop='/home/jptagaio/git/Bash_Scripts/src/vnc_ArchDesktop.sh'
+alias vivado_start='source /opt/Xilinx/Vivado/2023.1/settings64.sh; vivado &'
+alias vnc_ArchDesktop='/home/jptagaio/git/Bash_Scripts/src/vnc_ArchDesktop.sh'
+alias radio='/home/jptagaio/git/streaming-pt/radio.sh'
 
 # Set default text editor
 export EDITOR='vim'
 export VISUAL='vim'
-export PATH="${PATH}:$HOME/.local:$HOME/ti/ccs1220/Code Composer Studio 12.2.0.desktop/:$HOME/.local/bin/"
+export PATH="${PATH}:$HOME/.local:$HOME/ti/ccs1220/Code Composer Studio 12.2.0.desktop/:$HOME/.local/bin/:/opt/Xilinx"
 #. "$HOME/.cargo/env"
 
 # BASH HISTORY
@@ -47,5 +49,5 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 
-export QSYS_ROOTDIR="/home/jptagaio/git/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+export QSYS_ROOTDIR="/home/jptagaio/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/23.1/quartus/sopc_builder/bin"
 
