@@ -1,7 +1,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-execute pathogen#infect()
+call plug#begin()
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'christoomey/vim-tmux-navigator'
+
+call plug#end()
+
+if has('nvim')
+	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+	  Plug 'Shougo/deoplete.nvim'
+	    Plug 'roxma/nvim-yarp'
+		   Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 " Syntax enable
 set autoindent
@@ -36,12 +54,19 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Bash language server
-let g:ycm_language_server =
-            \ [
-                \   {
-            \       'name': 'bash',
-                \       'cmdline': [ 'bash-language-server', 'start' ],
-            \       'filetypes': [ 'sh' ],
-                \   }
-            \ ]
+" Set tabstop to 3
+set tabstop=3
+
+" Set tabidentation to 3
+set shiftwidth=3
+
+" For tab completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" Easy navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
