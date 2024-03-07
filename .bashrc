@@ -17,7 +17,8 @@ if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
 fi
 
 alias ls='ls --color=auto'
-alias ll='ls --color=auto -alF'
+alias ll='ls --color=auto -lF'
+alias la='ls --color=auto -alF'
 alias up='/home/jptagaio/git/Bash_Scripts/src/updater_script.sh'
 alias upfw='/home/jptagaio/git/Bash_Scripts/src/update_firmware.sh'
 alias df='df -h'
@@ -31,6 +32,9 @@ alias vnc_thinkpad='/home/jptagaio/git/Bash_Scripts/src/vnc_ArchThinkPad.sh'
 alias vivado_start='source /opt/Xilinx/Vivado/2023.1/settings64.sh; vivado &'
 alias vnc_ArchDesktop='/home/jptagaio/git/Bash_Scripts/src/vnc_ArchDesktop.sh'
 alias radio='/home/jptagaio/git/streaming-pt/radio.sh'
+alias myvimrc='vim /home/jptagaio/.vimrc'
+alias mybashrc='vim /home/jptagaio/.bashrc'
+alias mytmuxconf='vim /home/jptagaio/.tmux.conf'
 
 # Set default text editor
 export EDITOR='vim'
