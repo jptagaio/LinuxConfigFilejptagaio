@@ -1,6 +1,15 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"vim-plug 
+call plug#begin()
+
+" List your plugins here
+" Plug 'tpope/vim-sensible'
+Plug 'christoomey/vim-tmux-navigator'
+
+call plug#end()
+
 " Syntax enable
 set autoindent
 
