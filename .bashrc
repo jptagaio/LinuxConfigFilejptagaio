@@ -48,6 +48,10 @@ alias tv='/home/jptagaio/git/streaming-pt/tv.sh'
 alias myvimrc='vim /home/jptagaio/.vimrc'
 alias mybashrc='vim /home/jptagaio/.bashrc'
 alias mytmuxconf='vim /home/jptagaio/.tmux.conf'
+alias ncspot='flatpak run io.github.hrkfdn.ncspot'
+alias pdf='firefox'
+alias weather='/home/jptagaio/git/Bash_Scripts/src/get_Weather.sh Lisboa'
+alias generatewikisite='npx @11ty/eleventy --serve'
 
 # Set default text editor
 export EDITOR='vim'

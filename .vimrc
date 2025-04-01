@@ -1,14 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
-
-"vim-plug 
-call plug#begin()
-
-" List your plugins here
-" Plug 'tpope/vim-sensible'
-Plug 'christoomey/vim-tmux-navigator'
-
-call plug#end()
+filetype plugin on                  " required
 
 " Syntax enable
 set autoindent
@@ -111,3 +102,14 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
+
+"vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': 'md'}]
+
+"Restric vimwiki markdown files
+let g:vimwiki_global_ext = 0
+
+"Vim spell
+hi clear SpellBad
+hi SpellBad cterm=underline
