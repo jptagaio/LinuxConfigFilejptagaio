@@ -14,9 +14,9 @@ export PS1="\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h \[\033[1;35m\]\w \[\
 [[ $- != *i* ]] && return
 
 #Tmux open
-#if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-#	exec tmux new-session -A -s "${USER}" >/dev/null 2>&1
-#fi
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+	exec tmux new-session -A -s "${USER}" >/dev/null 2>&1
+fi
 
 
 alias ls='ls --color=auto'
