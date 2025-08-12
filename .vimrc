@@ -1,6 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype plugin on                  " required
 
+"Set colorscheme
+colorscheme sierra
+
 " Syntax enable
 set autoindent
 
