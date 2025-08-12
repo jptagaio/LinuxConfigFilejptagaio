@@ -52,6 +52,8 @@ alias ncspot='flatpak run io.github.hrkfdn.ncspot'
 alias pdf='firefox'
 alias weather='/home/jptagaio/git/Bash_Scripts/src/get_Weather.sh Lisboa'
 alias generatewikisite='npx @11ty/eleventy --serve'
+alias gt='git status'
+alias lz='lazygit'
 
 # Set default text editor
 export EDITOR='vim'
