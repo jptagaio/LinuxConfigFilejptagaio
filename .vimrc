@@ -1,15 +1,33 @@
 set nocompatible              " be iMproved, required
 filetype plugin on                  " required
 
+let g:ale_completion_enabled = 1
+
+call plug#begin()
+
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'vimwiki/vimwiki'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'neoclide/coc.nvim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
+
+call plug#end()
+
+let g:deoplete#enable_at_startup = 1
+set omnifunc=ale#completion#OmniFunc
+
 "Set colorscheme
-colorscheme sierra
+"colorscheme sierra
+colorscheme dracula
 
 " Syntax enable
 set autoindent
+set smartindent
 
 " " turn hybrid line numbers on
 :set number relativenumber
-:set nu rnu
 
 " " Speed up scrolling in Vim
 set ttyfast
@@ -36,10 +54,27 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " Set tabstop to 3
-set tabstop=3
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " Set tabidentation to 3
 set shiftwidth=3
+
+" use <tab> to trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <c-i> <Esc>:NERDTreeToggle<cr>
+nnoremap <c-i> <Esc>:NERDTreeToggle<cr>
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -50,48 +85,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" LSP diagnostics
-let g:lsp_diagnostics_enabled = 1
-
-" Highlight references
-let g:lsp_document_highlight_enabled = 1
-
-"GNU global
-let GtagsCscope_Auto_Load = 1
-let GtagsCscope_Auto_Map = 1
-let GtagsCscope_Quiet = 1
-set cscopetag
-
-"LSP shortcuts
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gs <plug>(lsp-document-symbol-search)
-    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
-    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
-
-    let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
-    
-    " refer to doc to add more commands
-endfunction
-
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
 
 "Tab movement
 " Go to tab by number
