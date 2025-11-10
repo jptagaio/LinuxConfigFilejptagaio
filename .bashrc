@@ -22,6 +22,7 @@ fi
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lF'
 alias la='ls --color=auto -alF'
+alias lz='lazygit'
 alias up='/home/jptagaio/git/Bash_Scripts/src/updater_script.sh'
 alias upfw='/home/jptagaio/git/Bash_Scripts/src/update_firmware.sh'
 alias df='df -h'
@@ -52,8 +53,8 @@ alias ncspot='flatpak run io.github.hrkfdn.ncspot'
 alias pdf='firefox'
 alias weather='/home/jptagaio/git/Bash_Scripts/src/get_Weather.sh Lisboa'
 alias generatewikisite='npx @11ty/eleventy --serve'
-alias gt='git status'
-alias lz='lazygit'
+alias disablegoogleplay='adb shell pm uninstall --user 0 com.android.vending'
+alias enablegoogleplay='adb shell cmd package install-existing com.android.vending'
 
 # Set default text editor
 export EDITOR='vim'
