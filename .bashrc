@@ -55,12 +55,18 @@ alias weather='/home/jptagaio/git/Bash_Scripts/src/get_Weather.sh Lisboa'
 alias generatewikisite='npx @11ty/eleventy --serve'
 alias disablegoogleplay='adb shell pm uninstall --user 0 com.android.vending'
 alias enablegoogleplay='adb shell cmd package install-existing com.android.vending'
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias eagle='LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 /opt/eagle-9.6.2/eagle'
+alias localAI='koboldcpp-linux-x64-nocuda'
 
 # Set default text editor
 export EDITOR='vim'
 export VISUAL='vim'
 export PATH="${PATH}:/var/lib/flatpak/exports/bin:/home/jptagaio/Applications/"
 . "$HOME/.cargo/env"
+
+export PATH="/home/jptagaio/.local/bin/:/opt/MRS_toolchain/risc_v_embedded_gcc/bin/:/opt/riscv-gnu-toolchain/bin/:${PATH}"
+export PATH="/opt/xpack-riscv-toolchain/bin:/home/jptagaio/AppImages/:${PATH}";
 
 # BASH HISTORY
 # Avoid duplicates
@@ -72,3 +78,10 @@ shopt -s histappend
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
+export QSYS_ROOTDIR="/home/jptagaio/altera_lite/25.1std/quartus/sopc_builder/bin"
+
+# Added by Quartus Prime software
+export SALT_LICENSE_FILE="$SALT_LICENSE_FILE;/home/jptagaio/.altera.quartus/questa_lic.dat"
+
+# opencode
+export PATH=/home/jptagaio/.opencode/bin:$PATH

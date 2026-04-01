@@ -9,11 +9,24 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'neoclide/coc.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
+
+"Bash language server
+if executable('bash-language-server')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'bash-language-server',
+        \ 'cmd': {server_info->['bash-language-server', 'start']},
+        \ 'allowlist': ['sh', 'bash'],
+        \ })
+endif
 
 let g:deoplete#enable_at_startup = 1
 set omnifunc=ale#completion#OmniFunc
@@ -58,9 +71,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-
-" Set tabidentation to 3
-set shiftwidth=3
 
 " use <tab> to trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
@@ -109,3 +119,8 @@ let g:vimwiki_global_ext = 0
 "Vim spell
 hi clear SpellBad
 hi SpellBad cterm=underline
+
+"asynccomplete.vim
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
