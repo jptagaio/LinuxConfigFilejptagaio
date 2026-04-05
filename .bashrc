@@ -58,12 +58,15 @@ alias enablegoogleplay='adb shell cmd package install-existing com.android.vendi
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias eagle='LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 /opt/eagle-9.6.2/eagle'
 alias localAI='koboldcpp-linux-x64-nocuda'
+alias contas='libreoffice --calc /home/jptagaio/Documents/Contas/Relatório\ de\ Contas\ 2025.ods &'
+alias connectbudsFE='bluetoothctl connect DC:C4:9C:1D:C6:E0'
+alias sshRouterMEO='ssh -o HostKeyAlgorithms=+ssh-rsa -c 3des-cbc meo@192.168.1.254'
 
 # Set default text editor
 export EDITOR='vim'
 export VISUAL='vim'
-export PATH="${PATH}:/var/lib/flatpak/exports/bin:/home/jptagaio/Applications/"
-. "$HOME/.cargo/env"
+export PATH="/var/lib/flatpak/exports/bin:/home/jptagaio/Applications/:
+		$HOME/.cargo/env:/opt/riscv-gnu-toolchain/bin:/opt/xpack-riscv-toolchain/bin/:${PATH}"
 
 export PATH="/home/jptagaio/.local/bin/:/opt/MRS_toolchain/risc_v_embedded_gcc/bin/:/opt/riscv-gnu-toolchain/bin/:${PATH}"
 export PATH="/opt/xpack-riscv-toolchain/bin:/home/jptagaio/AppImages/:${PATH}";
