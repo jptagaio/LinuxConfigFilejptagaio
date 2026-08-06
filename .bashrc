@@ -15,7 +15,7 @@ export PS1="\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h \[\033[1;35m\]\w \[\
 
 #Tmux open
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-	exec tmux new-session -A -s "${USER}" >/dev/null 2>&1
+	exec tmux new-session >/dev/null 2>&1
 fi
 
 
@@ -59,14 +59,17 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias eagle='LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 /opt/eagle-9.6.2/eagle'
 alias localAI='koboldcpp-linux-x64-nocuda'
 alias contas='libreoffice --calc /home/jptagaio/Documents/Contas/Relatório\ de\ Contas\ 2025.ods &'
+alias tercodia='python3 /home/jptagaio/git/Python_Scripts/src/terco_dia.py'
+alias musicserver='/home/jptagaio/go/bin/subtonic'
+alias poweroff='sudo systemctl poweroff'
 alias connectbudsFE='bluetoothctl connect DC:C4:9C:1D:C6:E0'
 alias sshRouterMEO='ssh -o HostKeyAlgorithms=+ssh-rsa -c 3des-cbc meo@192.168.1.254'
 
 # Set default text editor
 export EDITOR='vim'
 export VISUAL='vim'
-export PATH="/var/lib/flatpak/exports/bin:/home/jptagaio/Applications/:
-		$HOME/.cargo/env:/opt/riscv-gnu-toolchain/bin:/opt/xpack-riscv-toolchain/bin/:${PATH}"
+export PATH="${PATH}:/var/lib/flatpak/exports/bin:/home/jptagaio/Applications/"
+. "$HOME/.cargo/env"
 
 export PATH="/home/jptagaio/.local/bin/:/opt/MRS_toolchain/risc_v_embedded_gcc/bin/:/opt/riscv-gnu-toolchain/bin/:${PATH}"
 export PATH="/opt/xpack-riscv-toolchain/bin:/home/jptagaio/AppImages/:${PATH}";
@@ -88,3 +91,23 @@ export SALT_LICENSE_FILE="$SALT_LICENSE_FILE;/home/jptagaio/.altera.quartus/ques
 
 # opencode
 export PATH=/home/jptagaio/.opencode/bin:$PATH
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
