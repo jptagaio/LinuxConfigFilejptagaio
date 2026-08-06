@@ -63,7 +63,7 @@ alias tercodia='python3 /home/jptagaio/git/Python_Scripts/src/terco_dia.py'
 alias musicserver='/home/jptagaio/go/bin/subtonic'
 alias poweroff='sudo systemctl poweroff'
 alias connectbudsFE='bluetoothctl connect DC:C4:9C:1D:C6:E0'
-alias sshRouterMEO='ssh -o HostKeyAlgorithms=+ssh-rsa -c 3des-cbc meo@192.168.1.254'
+alias sshRouterMEO='ssh -o HostKeyAlgorithms=+ssh-rsa -c aes256-ctr meo@192.168.1.254'
 
 # Set default text editor
 export EDITOR='vim'
